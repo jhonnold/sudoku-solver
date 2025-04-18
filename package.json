@@ -1,0 +1,71 @@
+{
+  "name": "sudoku-solver",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">= 18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.release.json",
+    "clean": "rimraf build",
+    "dev-public": "webpack --watch --progress --config webpack/webpack.dev.js",
+    "dev-server": "nodemon --legacy-watch -x node --loader ts-node/esm src/index.ts",
+    "format": "prettier --write {src,public}/**/*.{js,html,ts,css}",
+    "prebuild": "webpack --config webpack/webpack.prod.js",
+    "lint": "eslint --fix src public",
+    "start": "node build/src/index.js",
+    "test": "echo OK"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonnold/sudoku-solver.git"
+  },
+  "author": "Jay Honnold <jayhonnold@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhonnold/sudoku-solver/issues"
+  },
+  "homepage": "https://github.com/jhonnold/sudoku-solver#readme",
+  "description": "A sudoku solver",
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@types/body-parser": "^1.19.5",
+    "@types/compression": "^1.7.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-config-standard": "^17.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "nodemon": "^3.1.9",
+    "postcss-loader": "^8.1.1",
+    "prettier": "^3.5.3",
+    "raw-loader": "^4.0.2",
+    "rimraf": "^6.0.1",
+    "terser-webpack-plugin": "^5.3.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.6",
+    "webpack-cli": "^6.0.1",
+    "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "compression": "^1.8.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "http": "^0.0.1-security",
+    "jquery": "^3.7.1",
+    "mini.css": "^3.0.1",
+    "reset-css": "^5.0.2"
+  }
+}
